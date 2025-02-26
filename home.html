@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sesi(4-6)</title>
+</head>
+
+<body>
+    <nav>
+        <a style="text-decoration: none;" href="home.html">Ruang Keluarga</a>
+        <a style="text-decoration: none;" href="rmakan.html">Ruang Makan</a>
+        <a style="text-decoration: none;" href="rtidur.html">Ruang Tidur</a>
+        <a style="text-decoration: none;" href="rtamu.html">Ruang Tamu</a>
+        <br>
+        <a href="index.html" onclick="logout()" class="logout">Logout</a>
+    </nav>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 90vh;">
+
+        <!-- lampu all -->
+        <div>
+            <button onclick="saklarAll('on')">On</button>
+            <button onclick="saklarAll('off')">Off</button>
+        </div>
+        <!-- lampu all end -->
+
+
+        <!-- lampu 1 -->
+        <div>
+            <img id="lampu1" src="assets/images/off.gif">
+            <button onclick="saklar('on', 1)">On</button>
+            <button onclick="saklar('off', 1)">Off</button>
+        </div>
+        <!-- lampu 1 end -->
+
+        <!-- lampu 2 -->
+        <div>
+            <img id="lampu2" src="assets/images/off.gif">
+            <button onclick="saklar('on', 2)">On</button>
+            <button onclick="saklar('off', 2)">Off</button>
+        </div>
+        <!-- lampu 2 end -->
+
+        <!-- lampu 3 -->
+        <div>
+            <img id="lampu3" src="assets/images/off.gif">
+            <button onclick="saklar('on', 3)">On</button>
+            <button onclick="saklar('off', 3)">Off</button>
+        </div>
+        <!-- lampu 3 end -->
+    </div>
+
+    <nav-bot>
+        <a onclick="lightMode()">Mode</a>
+    </nav-bot>
+
+    <script>
+        function saklar(params, lamp) {
+            let lampu1 = document.getElementById('lampu1');
+            let lampu2 = document.getElementById('lampu2');
+            let lampu3 = document.getElementById('lampu3');
+
+            if (params == 'on') {
+                if (lamp == 1)
+                    lampu1.src = "assets/images/on.gif";
+            }
+
+            if (params == 'off') {
+                if (lamp == 1)
+                    lampu1.src = "assets/images/off.gif";
+            }
+
+            if (params == 'on') {
+                if (lamp == 2)
+                    lampu2.src = "assets/images/on.gif";
+            }
+
+            if (params == 'off') {
+                if (lamp == 2)
+                    lampu2.src = "assets/images/off.gif";
+            }
+
+            if (params == 'on') {
+                if (lamp == 3)
+                    lampu3.src = "assets/images/on.gif";
+            }
+
+            if (params == 'off') {
+                if (lamp == 3)
+                    lampu3.src = "assets/images/off.gif";
+            }
+        }
+
+        function saklarAll(params){
+            let lampu1 = document.getElementById('lampu1');
+            let lampu2 = document.getElementById('lampu2');
+            let lampu3 = document.getElementById('lampu3');
+
+            if(params == 'on'){
+                lampu1.src = true;
+                lampu2.src = true;
+                lampu3.src = true;
+
+                lampu1.src = "assets/images/on.gif";
+                lampu2.src = "assets/images/on.gif";
+                lampu3.src = "assets/images/on.gif";
+            }
+
+            if(params == 'off'){
+                lampu1.src = false;
+                lampu2.src = false;
+                lampu3.src = false;
+
+                lampu1.src = "assets/images/off.gif";
+                lampu2.src = "assets/images/off.gif";
+                lampu3.src = "assets/images/off.gif";
+            }
+        }
+
+        function lightMode(){
+            alert('lagi di upgrade kontol sabar belum bisa di teken');
+        }
+
+        function logout(){
+            alert('balek kau kimak jangan balek kesini lagi');
+        }
+
+    </script>
+</body>
+
+</html>

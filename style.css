@@ -1,0 +1,54 @@
+*, html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(70, 70, 70);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 35, 35);
+    padding: 15px;
+}
+
+nav a, nav-bot a, nav-r a{
+    padding: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+nav a:hover, nav-bot a:hover, nav-r a:hover{
+    transition: background-color .5s ease-in-out;
+    cursor: pointer;
+    background-color: rgb(70, 70, 70);
+    border-radius: 30px;
+
+}
+
+nav-bot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgb(36, 35, 35);
+}
+
+.logout {
+    color: rgb(182, 75, 75);
+}
+
+nav-r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 35, 35);
+    padding: 15px;
+}
+
+

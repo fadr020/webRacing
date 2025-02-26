@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login/Register</title>
+</head>
+
+<body>
+
+    <nav-r>
+        <a class="home-r">Home</a>
+    </nav-r>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
+        <div style="">
+        <input style="height: 30px;" type="username" placeholder="Username" id="usernameInput">
+        <input style="height: 30px;" type="password" placeholder="Password" id="passwordInput">
+        <button style="height: 30px;" onclick="onLogin()" id="buttonLogin">Login</button>
+        <button style="height: 30px;" onclick="onRegister()" id="buttonRegister">Register</button>
+        </div>
+        <div>
+        <p id="register" style="color: white;">Akun ada berhasil didaftarkan</p>
+        <p id="aregister" style="color: white;">Akun anda telah terdaftar</p>
+        <p id="nregister" style="color: white;">Akun anda belum terdaftar</p>
+        </div>
+    </div>
+
+    <nav-bot>
+        <a onclick="lightMode()">Mode</a>
+    </nav-bot>
+
+    <script type="application/javascript">
+        let usernameInput = document.getElementById('usernameInput');
+        let passwordInput = document.getElementById('passwordInput');
+        let buttonLogin = document.getElementById('buttonLogin');
+        let buttonRegister = document.getElementById('buttonRegister');
+        let register = document.getElementById('register');
+        let aregister = document.getElementById('aregister');
+        let login = document.getElementById('login');
+        let nregister = document.getElementById('nregister');
+
+        register.style.display = "none"
+        aregister.style.display = "none"
+        nregister.style.display = "none"
+
+
+        function onRegister() {
+            let username = usernameInput.value;
+            let password = passwordInput.value;
+            localStorage.setItem('username', usernameInput.value);
+
+            let userData = JSON.parse(localStorage.getItem("userData")) || {};
+
+            if (localStorage.getItem(username)) {
+                alert('si pepek ini baru kau daftar')
+                return;
+            }
+            if (usernameInput && passwordInput) {
+                localStorage.setItem(username, password);
+                alert('dah terdaftar langsung login tol')
+            }
+
+            userData[username] = { password: password }
+            localStorage.setItem("userData", JSON.stringify(userData));
+        }
+
+        function onLogin() {
+            let username = usernameInput.value;
+            localStorage.setItem('username', usernameInput.value);
+            let storedData = localStorage.getItem(usernameInput.value);
+
+            if (storedData == null) {
+                alert('daftar dulu kimak')
+                return;
+            }
+
+            if (localStorage.getItem('username')) {
+                window.location.href = "home.html"
+                alert('test test lampu dulu ya kontol')
+            }
+        }
+
+        function lightMode(){
+            alert('lagi di upgrade kontol sabar belum bisa di teken');
+        }
+    </script>
+</body>
+
+</html>
